@@ -10,16 +10,13 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap"
     rel="stylesheet"
   >
 
   <style>
-    /* =========================================
-       VARIABLES
-    ========================================= */
-
     :root {
       --azul: #0756b7;
       --azul-oscuro: #07377d;
@@ -29,25 +26,25 @@
       --borde: #e5eaf2;
     }
 
-    /* =========================================
-       ESTILOS GENERALES
-    ========================================= */
-
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    html {
+      min-height: 100%;
+    }
+
     body {
       min-height: 100vh;
       min-height: 100dvh;
 
-      padding: 150px 20px 50px;
-
       display: flex;
       align-items: center;
       justify-content: center;
+
+      padding: 14px;
 
       font-family: 'DM Sans', sans-serif;
 
@@ -71,55 +68,37 @@
         );
     }
 
-    /* =========================================
-       TARJETA PRINCIPAL
-    ========================================= */
+    /* TARJETA PRINCIPAL */
 
     .tarjeta {
-      position: relative;
-
       width: 100%;
-      max-width: 450px;
+      max-width: 480px;
 
-      padding: 145px 32px 42px;
+      padding: 24px 22px 28px;
 
       background: rgba(255, 255, 255, 0.98);
-
-      border: 1px solid rgba(255, 255, 255, 0.90);
-      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 26px;
 
       box-shadow:
-        0 30px 80px rgba(5, 36, 83, 0.22),
-        0 5px 20px rgba(5, 36, 83, 0.08);
+        0 22px 60px rgba(5, 36, 83, 0.22),
+        0 5px 18px rgba(5, 36, 83, 0.08);
     }
 
-    /* =========================================
-       LOGOTIPO GRANDE
-    ========================================= */
+    /* LOGO */
 
     .logo {
-      position: absolute;
+      width: 190px;
+      height: 115px;
 
-      top: -115px;
-      left: 50%;
-      transform: translateX(-50%);
-
-      width: 230px;
-      height: 230px;
-
-      padding: 12px;
-
-      background: #ffffff;
-      border: 6px solid #ffffff;
-      border-radius: 32px;
-
-      box-shadow:
-        0 15px 35px rgba(4, 39, 93, 0.20);
+      margin: 0 auto 12px;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
+      background: var(--blanco);
+      border-radius: 18px;
       overflow: hidden;
     }
 
@@ -130,31 +109,25 @@
       object-fit: contain;
     }
 
-    /* =========================================
-       TÍTULO
-    ========================================= */
+    /* TÍTULO */
 
     h1 {
       font-family: 'Outfit', sans-serif;
-
-      font-size: clamp(24px, 5vw, 30px);
+      font-size: 26px;
       font-weight: 700;
-
-      letter-spacing: -0.7px;
       line-height: 1.2;
+      letter-spacing: -0.5px;
 
       color: var(--azul-oscuro);
       text-align: center;
 
-      margin-bottom: 38px;
+      margin-bottom: 25px;
     }
 
-    /* =========================================
-       CAMPOS BANCARIOS
-    ========================================= */
+    /* CAMPOS */
 
     .campo {
-      margin-bottom: 25px;
+      margin-bottom: 19px;
     }
 
     .campo:last-child {
@@ -163,34 +136,41 @@
 
     .etiqueta {
       display: block;
+      margin-bottom: 9px;
+
       color: var(--texto);
-
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 700;
-
-      margin-bottom: 12px;
     }
 
-    .dato-contenedor {
+    .dato-contenedor,
+    .titular-contenedor {
       display: flex;
       align-items: center;
 
-      gap: 10px;
-      padding: 9px 9px 9px 16px;
+      min-height: 60px;
+
+      padding: 10px 11px 10px 15px;
 
       background: #f5f8fd;
-
       border: 1px solid var(--borde);
-      border-radius: 16px;
+      border-radius: 14px;
+    }
 
-      transition:
-        border-color 0.2s,
-        background 0.2s;
+    .dato-contenedor {
+      gap: 10px;
     }
 
     .dato-contenedor:focus-within {
       border-color: var(--azul);
-      background: #ffffff;
+    }
+
+    .titular-nombre {
+      color: var(--azul-oscuro);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
     }
 
     .numero {
@@ -198,63 +178,42 @@
       min-width: 0;
 
       color: var(--azul-oscuro);
-
-      font-size: clamp(12px, 3.5vw, 16px);
+      font-size: 17px;
       font-weight: 700;
 
-      letter-spacing: 0.3px;
-      overflow-wrap: anywhere;
+      letter-spacing: 0;
       font-variant-numeric: tabular-nums;
+      overflow-wrap: anywhere;
 
       user-select: all;
       -webkit-user-select: all;
     }
 
-    .titular-contenedor {
-      padding: 16px;
-      background: #f5f8fd;
-
-      border: 1px solid var(--borde);
-      border-radius: 16px;
-    }
-
-    .titular-nombre {
-      color: var(--azul-oscuro);
-
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 1.5;
-
-      overflow-wrap: anywhere;
-    }
-
-    /* =========================================
-       BOTONES COPIAR
-    ========================================= */
+    /* BOTONES COPIAR */
 
     .copiar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+
       flex-shrink: 0;
       min-width: 90px;
+      min-height: 44px;
 
-      padding: 13px 14px;
+      padding: 10px 12px;
 
-      border: none;
-      border-radius: 11px;
+      border: 0;
+      border-radius: 10px;
 
       background: var(--azul);
       color: var(--blanco);
 
       font-family: inherit;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 700;
 
       cursor: pointer;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      gap: 7px;
 
       transition:
         background 0.2s,
@@ -263,7 +222,6 @@
 
     .copiar:hover {
       background: var(--azul-oscuro);
-      transform: translateY(-1px);
     }
 
     .copiar:active {
@@ -274,93 +232,108 @@
       background: var(--naranja);
     }
 
+    .copiar:focus-visible {
+      outline: 3px solid var(--naranja);
+      outline-offset: 2px;
+    }
+
     .copiar svg {
       width: 16px;
       height: 16px;
 
       fill: none;
       stroke: currentColor;
-
       stroke-width: 2;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
 
-    .copiar:focus-visible {
-      outline: 3px solid var(--naranja);
-      outline-offset: 3px;
-    }
-
-    /* =========================================
-       SEPARADORES
-    ========================================= */
-
-    .linea {
-      height: 1px;
-      background: var(--borde);
-      margin: 28px 0;
-    }
-
-    /* =========================================
-       RESPONSIVE
-    ========================================= */
+    /* PANTALLAS DE CELULAR */
 
     @media (max-width: 480px) {
       body {
-        padding: 135px 16px 35px;
+        padding: 10px;
       }
 
       .tarjeta {
-        padding: 135px 20px 32px;
-        border-radius: 25px;
+        padding: 20px 14px 24px;
+        border-radius: 22px;
       }
 
       .logo {
-        width: 210px;
-        height: 210px;
-
-        top: -105px;
-        border-radius: 28px;
+        width: 180px;
+        height: 105px;
+        margin-bottom: 10px;
       }
 
       h1 {
-        font-size: 25px;
-        margin-bottom: 32px;
+        font-size: 24px;
+        margin-bottom: 21px;
       }
 
-      .dato-contenedor {
-        padding-left: 12px;
+      .campo {
+        margin-bottom: 17px;
       }
 
-      .copiar {
-        min-width: 82px;
-        padding: 12px 10px;
+      .etiqueta {
+        font-size: 14px;
       }
 
       .titular-nombre {
-        font-size: 14px;
-      }
-    }
-
-    @media (max-width: 360px) {
-      .tarjeta {
-        padding-left: 15px;
-        padding-right: 15px;
+        font-size: 16px;
       }
 
       .numero {
-        font-size: 12px;
+        font-size: 16px;
+      }
+
+      .dato-contenedor,
+      .titular-contenedor {
+        min-height: 56px;
+      }
+    }
+
+    /* CELULARES ESTRECHOS */
+
+    @media (max-width: 360px) {
+      .tarjeta {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      .dato-contenedor {
+        flex-wrap: wrap;
+      }
+
+      .numero {
+        font-size: 16px;
       }
 
       .copiar {
-        min-width: 74px;
-        padding: 11px 8px;
-        gap: 4px;
+        min-width: 84px;
+      }
+    }
+
+    /* PANTALLAS CON POCA ALTURA */
+
+    @media (max-height: 680px) {
+      .tarjeta {
+        padding-top: 14px;
+        padding-bottom: 18px;
       }
 
-      .copiar svg {
-        width: 14px;
-        height: 14px;
+      .logo {
+        width: 155px;
+        height: 85px;
+        margin-bottom: 6px;
+      }
+
+      h1 {
+        margin-bottom: 15px;
+      }
+
+      .campo {
+        margin-bottom: 12px;
       }
     }
   </style>
@@ -370,7 +343,7 @@
 
   <main class="tarjeta">
 
-    <!-- LOGOTIPO -->
+    <!-- LOGO -->
 
     <div class="logo">
       <img src="./logo.png" alt="Círculo Dental">
@@ -383,33 +356,25 @@
     <!-- TITULAR -->
 
     <div class="campo">
-
       <span class="etiqueta">
         Titular de la cuenta
       </span>
 
       <div class="titular-contenedor">
-
         <span class="titular-nombre">
           Alejandro Fabian Piñeiro Madero
         </span>
-
       </div>
-
     </div>
-
-    <div class="linea"></div>
 
     <!-- NÚMERO DE CUENTA -->
 
     <div class="campo">
-
       <span class="etiqueta">
         Número de cuenta
       </span>
 
       <div class="dato-contenedor">
-
         <span class="numero" id="cuenta">1301763115</span>
 
         <button
@@ -418,40 +383,23 @@
           aria-label="Copiar número de cuenta"
           onclick="copiarDato('cuenta', this)"
         >
-
           <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect
-              x="8"
-              y="8"
-              width="12"
-              height="12"
-              rx="2"
-            />
-            <path
-              d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"
-            />
+            <rect x="8" y="8" width="12" height="12" rx="2"/>
+            <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>
           </svg>
-
           <span>Copiar</span>
-
         </button>
-
       </div>
-
     </div>
-
-    <div class="linea"></div>
 
     <!-- CLABE INTERBANCARIA -->
 
     <div class="campo">
-
       <span class="etiqueta">
         CLABE interbancaria
       </span>
 
       <div class="dato-contenedor">
-
         <span class="numero" id="clabe">072164013017631158</span>
 
         <button
@@ -460,44 +408,25 @@
           aria-label="Copiar CLABE interbancaria"
           onclick="copiarDato('clabe', this)"
         >
-
           <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect
-              x="8"
-              y="8"
-              width="12"
-              height="12"
-              rx="2"
-            />
-            <path
-              d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"
-            />
+            <rect x="8" y="8" width="12" height="12" rx="2"/>
+            <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>
           </svg>
-
           <span>Copiar</span>
-
         </button>
-
       </div>
-
     </div>
 
   </main>
 
-  <!-- JAVASCRIPT -->
-
   <script>
     async function copiarDato(id, boton) {
-
       const elemento = document.getElementById(id);
 
-      if (!elemento) {
-        return;
-      }
+      if (!elemento) return;
 
       const numero = elemento.textContent.replace(/\s/g, '');
 
-      // Validar el formato de la CLABE.
       if (id === 'clabe' && !/^\d{18}$/.test(numero)) {
         alert('La CLABE debe contener 18 dígitos.');
         return;
@@ -506,7 +435,6 @@
       const texto = boton.querySelector('span');
 
       try {
-
         await navigator.clipboard.writeText(numero);
 
         texto.textContent = '¡Listo!';
@@ -518,14 +446,11 @@
         }, 1800);
 
       } catch (error) {
-
-        alert(
-          'No se pudo copiar el número. Puedes seleccionarlo manualmente.'
-        );
-
+        alert('No se pudo copiar. Puedes seleccionar el número manualmente.');
       }
     }
   </script>
 
 </body>
 </html>
+
