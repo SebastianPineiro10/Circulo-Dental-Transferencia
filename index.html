@@ -3,23 +3,13 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0756b7">
 
   <title>Transferencia bancaria | Círculo Dental</title>
 
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap"
     rel="stylesheet"
@@ -120,7 +110,6 @@
       padding: 12px;
 
       background: #ffffff;
-
       border: 6px solid #ffffff;
       border-radius: 32px;
 
@@ -136,10 +125,8 @@
 
     .logo img {
       display: block;
-
       width: 100%;
       height: 100%;
-
       object-fit: contain;
     }
 
@@ -157,7 +144,6 @@
       line-height: 1.2;
 
       color: var(--azul-oscuro);
-
       text-align: center;
 
       margin-bottom: 38px;
@@ -177,7 +163,6 @@
 
     .etiqueta {
       display: block;
-
       color: var(--texto);
 
       font-size: 14px;
@@ -191,7 +176,6 @@
       align-items: center;
 
       gap: 10px;
-
       padding: 9px 9px 9px 16px;
 
       background: #f5f8fd;
@@ -219,7 +203,6 @@
       font-weight: 700;
 
       letter-spacing: 0.3px;
-
       overflow-wrap: anywhere;
       font-variant-numeric: tabular-nums;
 
@@ -227,13 +210,30 @@
       -webkit-user-select: all;
     }
 
+    .titular-contenedor {
+      padding: 16px;
+      background: #f5f8fd;
+
+      border: 1px solid var(--borde);
+      border-radius: 16px;
+    }
+
+    .titular-nombre {
+      color: var(--azul-oscuro);
+
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.5;
+
+      overflow-wrap: anywhere;
+    }
+
     /* =========================================
-       BOTÓN COPIAR
+       BOTONES COPIAR
     ========================================= */
 
     .copiar {
       flex-shrink: 0;
-
       min-width: 90px;
 
       padding: 13px 14px;
@@ -286,15 +286,18 @@
       stroke-linejoin: round;
     }
 
+    .copiar:focus-visible {
+      outline: 3px solid var(--naranja);
+      outline-offset: 3px;
+    }
+
     /* =========================================
-       LÍNEA DIVISORIA
+       SEPARADORES
     ========================================= */
 
     .linea {
       height: 1px;
-
       background: var(--borde);
-
       margin: 28px 0;
     }
 
@@ -303,14 +306,12 @@
     ========================================= */
 
     @media (max-width: 480px) {
-
       body {
         padding: 135px 16px 35px;
       }
 
       .tarjeta {
         padding: 135px 20px 32px;
-
         border-radius: 25px;
       }
 
@@ -319,7 +320,6 @@
         height: 210px;
 
         top: -105px;
-
         border-radius: 28px;
       }
 
@@ -336,10 +336,13 @@
         min-width: 82px;
         padding: 12px 10px;
       }
+
+      .titular-nombre {
+        font-size: 14px;
+      }
     }
 
     @media (max-width: 360px) {
-
       .tarjeta {
         padding-left: 15px;
         padding-right: 15px;
@@ -360,7 +363,6 @@
         height: 14px;
       }
     }
-
   </style>
 </head>
 
@@ -371,15 +373,32 @@
     <!-- LOGOTIPO -->
 
     <div class="logo">
-      <img
-        src="./logo.png"
-        alt="Círculo Dental"
-      >
+      <img src="./logo.png" alt="Círculo Dental">
     </div>
 
     <!-- TÍTULO -->
 
     <h1>Transferencia bancaria</h1>
+
+    <!-- TITULAR -->
+
+    <div class="campo">
+
+      <span class="etiqueta">
+        Titular de la cuenta
+      </span>
+
+      <div class="titular-contenedor">
+
+        <span class="titular-nombre">
+          Alejandro Fabian Piñeiro Madero
+        </span>
+
+      </div>
+
+    </div>
+
+    <div class="linea"></div>
 
     <!-- NÚMERO DE CUENTA -->
 
@@ -391,9 +410,7 @@
 
       <div class="dato-contenedor">
 
-        <span class="numero" id="cuenta">
-          123456789012
-        </span>
+        <span class="numero" id="cuenta">1301763115</span>
 
         <button
           class="copiar"
@@ -402,10 +419,7 @@
           onclick="copiarDato('cuenta', this)"
         >
 
-          <svg
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-          >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
             <rect
               x="8"
               y="8"
@@ -413,7 +427,6 @@
               height="12"
               rx="2"
             />
-
             <path
               d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"
             />
@@ -424,9 +437,8 @@
         </button>
 
       </div>
-    </div>
 
-    <!-- SEPARADOR -->
+    </div>
 
     <div class="linea"></div>
 
@@ -440,9 +452,7 @@
 
       <div class="dato-contenedor">
 
-        <span class="numero" id="clabe">
-          123456789012345678
-        </span>
+        <span class="numero" id="clabe">072164013017631158</span>
 
         <button
           class="copiar"
@@ -451,10 +461,7 @@
           onclick="copiarDato('clabe', this)"
         >
 
-          <svg
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-          >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
             <rect
               x="8"
               y="8"
@@ -462,7 +469,6 @@
               height="12"
               rx="2"
             />
-
             <path
               d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"
             />
@@ -473,6 +479,7 @@
         </button>
 
       </div>
+
     </div>
 
   </main>
@@ -480,30 +487,34 @@
   <!-- JAVASCRIPT -->
 
   <script>
-
     async function copiarDato(id, boton) {
 
-      const numero = document
-        .getElementById(id)
-        .textContent
-        .replace(/\s/g, '');
+      const elemento = document.getElementById(id);
+
+      if (!elemento) {
+        return;
+      }
+
+      const numero = elemento.textContent.replace(/\s/g, '');
+
+      // Validar el formato de la CLABE.
+      if (id === 'clabe' && !/^\d{18}$/.test(numero)) {
+        alert('La CLABE debe contener 18 dígitos.');
+        return;
+      }
+
+      const texto = boton.querySelector('span');
 
       try {
 
         await navigator.clipboard.writeText(numero);
 
-        const texto = boton.querySelector('span');
-
         texto.textContent = '¡Listo!';
-
         boton.classList.add('copiado');
 
         setTimeout(() => {
-
           texto.textContent = 'Copiar';
-
           boton.classList.remove('copiado');
-
         }, 1800);
 
       } catch (error) {
@@ -514,7 +525,6 @@
 
       }
     }
-
   </script>
 
 </body>
